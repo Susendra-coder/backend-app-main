@@ -6,7 +6,7 @@
   "main": "backend-app/index.js",
   "scripts": {
     "start": "node backend-app/index.js",
-    "dev": "nodemon backend-app/index.js",
+    "dev": "node backend-app/index.js",
     "test": "echo \"No tests specified\""
   },
   "author": "Susendra",
