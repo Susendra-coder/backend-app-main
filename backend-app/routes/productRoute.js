@@ -1,18 +1,19 @@
-import express from 'express';
-import { showProducts, createProduct, updateProduct, deleteProduct } from '../controllers/storeController.js'; // Adjust path if needed
+import {
+  getProducts,
+  addProductForm,
+  addProduct,
+  deleteProduct,
+  editProductForm,
+  saveProduct,
+} from "../controllers/productController.js";
+import express from "express";
+const productRouter = express.Router();
 
-const router = express.Router();
+productRouter.get("/", getProducts);
+productRouter.get("/add", addProductForm);
+productRouter.post("/add", addProduct);
+productRouter.get("/:id/delete", deleteProduct);
+productRouter.get("/:id/edit", editProductForm);
+productRouter.post("/:id/save", saveProduct);
 
-// GET /products - Show all products
-router.get('/', showProducts);
-
-// POST /products - Create a new product
-router.post('/', createProduct);
-
-// PUT /products/:id - Update a product by ID
-router.put('/:id', updateProduct);
-
-// DELETE /products/:id - Delete a product by ID
-router.delete('/:id', deleteProduct);
-
-export { router as productRouter };
+export default productRouter;
