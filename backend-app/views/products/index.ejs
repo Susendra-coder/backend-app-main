@@ -11,9 +11,9 @@
     <ol>
     <% products.forEach(product => { %>
         <li><%= product.name %>-
-            <%=product.desc %>-
+            <%=product.description %>-
             <%= product.price %>-
-            <%= product.imageUrl %>-
+            <%= product.image %>-
             <a href="/products/<%= product._id %>/edit">Edit</a>-
             <a href="/products/<%= product._id %>/delete">Delete</a>
         </li>
