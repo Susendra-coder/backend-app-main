@@ -3,7 +3,7 @@ import productModel from "../models/productModel.js";
 
 const dbConnect = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI);
+    await mongoose.connect(process.env.MONGO_URi);
     console.log("Database connected successfully");
   } catch (err) {
     console.log("Database connection error:", err);

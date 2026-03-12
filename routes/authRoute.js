@@ -1,14 +1,13 @@
-import express from "express";
-import { register, login, logout } from "../controllers/authController.js";
+import {login,validateUser,register,registerUser,logout,signup,signin} from "../controllers/authController.js"
+import express from "express"
+const authRouter = express.Router()
 
-const authRouter = express.Router();
+authRouter.get("/login",login)
+authRouter.post("/login",validateUser)
+authRouter.get("/register",register)
+authRouter.post("/register",registerUser)
+authRouter.get("/logout",logout)
+authRouter.post("/signup",signup)
+authRouter.post("/signin",signin)
 
-authRouter.get("/register", (req, res) => res.render("auth/register"));
-authRouter.post("/register", register);
-
-authRouter.get("/login", (req, res) => res.render("auth/login"));
-authRouter.post("/login", login);
-
-authRouter.post("/logout", logout);
-
-export { authRouter };
+export default authRouter

@@ -5,14 +5,13 @@
   "type": "module",
   "main": "backend-app/index.js",
   "scripts": {
-    "start": "node backend-app/index.js",
-    "dev": "node backend-app/index.js"
+    "start": "nodemon backend-app/index.js",
+    "dev": "nodemon backend-app/index.js"
   },
   "author": "Susendra",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^17.3.1",
-
     "ejs": "^5.0.1",
     "express": "^5.2.1",
     "express-ejs-layouts": "^2.5.1",
