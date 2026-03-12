@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-  </head>
-  <body>
-    <h1>Products Page</h1>
-    <div class="row">
-     <% products.forEach(product => { %>
-        <div class="box">
-          <img src="<%= product.image %>" width="300px" alt="Product 1">
-            <h2><%= product.name %></h2>
-            <p><%= product.description %></p>
-            <h4><%= product.price %></h4>
-        </div>
-     <% }) %>
-    </div>
-  </body>
+</head>
+<body>
+    <h2>Users Admin Page</h2>
+    <a href="/users/add">Add User</a>
+    <ol>
+    <% users.forEach(user => { %>
+        <li><%= user.name %>-
+            <%= user.email %>-
+            <%= user.password %>-
+            <%= user.role %>-
+            <a href="/users/<%= user._id %>/edit">Edit</a>-
+            <a href="/users/<%= user._id %>/delete">Delete</a>
+        </li>
+    <% }) %>
+    </ol>
+</body>
 </html>
